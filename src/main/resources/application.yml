@@ -1,5 +1,5 @@
-spring:
-    datasource:
+#spring:
+#    datasource:
 #        hikari:
 #            connection-test-query: SELECT 1 FROM DUAL
 #            minimum-idle: 1
@@ -7,7 +7,7 @@ spring:
 #            pool-name: hikary_pool
 #            auto-commit: false
 #        driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/db_example
-        username: root
-        password: 1987
+#        url: jdbc:mysql://localhost:3306/db_example
+#        username: root
+#        password: 1987
 #        type: com.zaxxer.hikari.HikariDataSource

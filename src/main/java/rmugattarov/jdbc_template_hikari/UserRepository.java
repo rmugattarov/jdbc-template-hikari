@@ -2,6 +2,7 @@ package rmugattarov.jdbc_template_hikari;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -9,12 +10,10 @@ import java.util.List;
 import java.util.Random;
 
 @Repository
-public class UserRepository {
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+public class UserRepository extends JdbcDaoSupport{
 
     public void printAll() {
-        System.out.println(jdbcTemplate.queryForList("select * from user"));
+        System.out.println(getJdbcTemplate().queryForList("select * from user"));
     }
 
     public void persist() {
@@ -29,6 +28,6 @@ public class UserRepository {
             vals.add(row);
         }
 
-        jdbcTemplate.batchUpdate("insert into user(id,name,email) values(?,?,?)",vals);
+        getJdbcTemplate().batchUpdate("insert into user(id,name,email) values(?,?,?)",vals);
     }
 }
