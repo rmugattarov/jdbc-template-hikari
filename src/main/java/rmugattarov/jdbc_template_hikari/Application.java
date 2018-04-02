@@ -10,5 +10,6 @@ public class Application {
         ConfigurableApplicationContext context = SpringApplication.run(Application.class, args);
         UserRepository userRepository = context.getBean(UserRepository.class);
         userRepository.printAll();
+//        userRepository.persist();
     }
 }
